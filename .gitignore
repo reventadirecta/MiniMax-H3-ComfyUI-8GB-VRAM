@@ -1,0 +1,32 @@
+# Model weights and checkpoints
+*.safetensors
+*.gguf
+*.ckpt
+*.bin
+*.pt
+*.pth
+
+# Generated media and logs
+*.mp4
+*.webm
+*.mov
+*.log
+*.wav
+*.png
+*.jpg
+*.jpeg
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+
+# Local tooling and caches
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+.vscode/
+.idea/
+Thumbs.db
