@@ -14,7 +14,7 @@ This repository contains a custom adaptation created and tested specifically to 
 
 8 GB VRAM is the hardware tested for this workflow, not a universal guarantee for every GPU with 8 GB. Results can vary with GPU model, available RAM, drivers, PyTorch version, ComfyUI version, custom-node versions, and background applications.
 
-## Recommended maximum tested configuration
+## Recommended tested configuration
 
 - 480 × 864
 - 158 frames
@@ -23,7 +23,9 @@ This repository contains a custom adaptation created and tested specifically to 
 - Euler
 - Simple scheduler
 
-The row above is the recommended maximum tested configuration currently recorded for this setup. The included workflow keeps the current working defaults from the source workflow: 608 × 352 and 124 frames, with 20 Euler/Simple steps. Change the resolution and frame count only after confirming that your machine has enough VRAM and system RAM.
+480 × 864 is currently the recommended tested configuration for a good balance between image quality, stability, and generation time. Higher resolutions can also work, although generation time and memory/offload requirements increase significantly. A definitive upper resolution limit has not yet been established.
+
+The included workflow keeps the current working defaults from the source workflow: 608 × 352 and 124 frames, with 20 Euler/Simple steps. Change the resolution and frame count only after confirming that your machine has enough VRAM and system RAM.
 
 ## What is included
 
@@ -50,6 +52,8 @@ The tested low-VRAM runtime uses `--lowvram`, keeps the video VAE on the GPU wit
 ## Important limitations
 
 This workflow is tuned around one Windows laptop configuration. It may require lower resolution, fewer frames, or other adjustments on a different machine. In particular, 25 steps caused instability in the tested 8 GB system and are not recommended here; start with 20 steps.
+
+The workflow can also be tested at resolutions above 480 × 864. Expect substantially longer generation times and higher memory/offload or system-RAM requirements as the resolution increases. The observed scaling is not necessarily linear with pixel count when an 8 GB GPU is close to its memory limit.
 
 The workflow depends on the node signatures and model formats available in the referenced ComfyUI/custom-node versions. A missing node or model will prevent the graph from running; the repository does not vendor third-party code or weights.
 
